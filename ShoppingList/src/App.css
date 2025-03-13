@@ -1,0 +1,110 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  margin: 0;
+}
+
+.ShoppingList {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.AddItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.Input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 2px solid #333;
+  font-size: 1rem;
+  outline: none;
+  background-color: black;
+  color: white;
+}
+
+.Submit {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.Submit:hover {
+  background-color: #218838;
+}
+
+.list_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.list_box:hover {
+  background-color: rgba(214, 255, 196, 0.87);
+}
+
+.item_name {
+  font-size: 1rem;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.item_name.strikethrough {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.edit_button {
+  background-color: #ffc107;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.edit_button:hover {
+  background-color: #e0a800;
+}
+
+.remove_button {
+  background-color: #dc3545;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+}
+
+.remove_button:hover {
+  background-color: #c82333;
+}
