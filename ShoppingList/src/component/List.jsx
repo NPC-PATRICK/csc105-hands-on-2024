@@ -1,40 +1,55 @@
 import { useState } from "react";
 
 function List({ item, items, setItems }) {
-  const [isGreen, setIsGreen] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [newName, setNewName] = useState(item.name);
 
   function removeItem(e) {
     e.stopPropagation();
-    setItems(items.filter((i) => i !== item));
+    setItems(items.filter((i) => i.id !== item.id));
   }
 
-  function edit_button(e) {
+  function toggleEdit(e) {
     e.stopPropagation();
-    setItems(
-      items.map((i) => {
-        if (i === item) {
-          return { ...i, name: prompt("Enter new item name") };
-        }
-        return i;
-      })
-    );
+    setIsEditing(true);
+  }
+
+  function handleEditChange(e) {
+    setNewName(e.target.value);
+  }
+
+  function handleEditBlur() {
+    if (newName.trim() !== "") {
+      setItems(
+        items.map((i) =>
+          i.id === item.id ? { ...i, name: newName.trim() } : i
+        )
+      );
+    }
+    setIsEditing(false);
   }
 
   return (
     <div
-      className="list_box"
-      onClick={() => setIsGreen(!isGreen)}
-      style={{
-        backgroundColor: isGreen ? "rgba(214, 255, 196, 0.87)" : "white",
-      }}
+      className={`list_box ${isChecked ? "checked" : ""}`}
+      onClick={() => setIsChecked(!isChecked)}
     >
-      <p className="item_name">{item.name}</p>
-      <button onClick={edit_button} className="edit_button">
-        Edit
-      </button>
-      <button onClick={removeItem} className="remove_button">
-        Remove
-      </button>
+      {isEditing ? (
+        <input
+          className="edit_input"
+          value={newName}
+          onChange={handleEditChange}
+          onBlur={handleEditBlur}
+          autoFocus
+        />
+      ) : (
+        <p className={`item_name ${isChecked ? "strikethrough" : ""}`} onClick={toggleEdit}>
+          {item.name}
+        </p>
+      )}
+      <button onClick={toggleEdit} className="editItem">Edit</button>
+      <button onClick={removeItem} className="remove_button">Remove</button>
     </div>
   );
 }

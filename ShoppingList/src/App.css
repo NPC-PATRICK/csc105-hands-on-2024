@@ -13,7 +13,7 @@ body {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 350px;
+  width: 400px;
   text-align: center;
 }
 
@@ -34,7 +34,7 @@ h1 {
   flex: 1;
   padding: 10px;
   border-radius: 6px;
-  border: 2px solid #333;
+  border: 2px solid white;
   font-size: 1rem;
   outline: none;
   background-color: black;
@@ -59,39 +59,55 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
+  background: rgba(245, 245, 245, 0.87);
   border-radius: 8px;
   padding: 12px;
   margin-bottom: 10px;
   transition: background-color 0.3s;
+  gap: 10px;
 }
 
-.list_box:hover {
-  background-color: rgba(214, 255, 196, 0.87);
+.list_box.checked {
+  background: rgba(214, 255, 196, 0.87);
 }
 
 .item_name {
   font-size: 1rem;
   flex-grow: 1;
   text-align: left;
+  cursor: pointer;
 }
+
 
 .item_name.strikethrough {
   text-decoration: line-through;
   color: gray;
 }
 
-.edit_button {
+
+.edit_input {
+  flex: 1;
+  padding: 8px;
+  font-size: 1rem;
+  border: 2px solid white;
+  border-radius: 6px;
+  background-color: black;
+  color: white;
+  outline: none;
+}
+
+.editItem {
   background-color: #ffc107;
+  color: black;
   border: none;
   padding: 8px 12px;
-  margin: 0 5px;
+  margin: 5px;
   border-radius: 5px;
   font-size: 0.9rem;
   cursor: pointer;
 }
 
-.edit_button:hover {
+.editItem:hover {
   background-color: #e0a800;
 }
 
