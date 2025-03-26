@@ -6,7 +6,7 @@ import myImg4 from "../images/IMG0297.jpg";
 import myImg5 from "../images/image1.jpg";
 import myImg6 from "../images/image2.jpg";
 
-function gallery() {
+function Gallery() {
   return (
     <section 
       id="gallery" 
@@ -24,4 +24,4 @@ function gallery() {
   )
 }
 
-export default gallery
+export default Gallery
