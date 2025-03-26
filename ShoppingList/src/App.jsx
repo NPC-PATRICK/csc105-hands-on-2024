@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="ShoppingList">
-      <h1>Shopping List</h1>
+      <h1>Shopping Queue</h1>
       <form className="AddItem" onSubmit={handleSubmit}>
         <input
           className="Input"
